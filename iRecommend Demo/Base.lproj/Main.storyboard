@@ -46,7 +46,7 @@
         <!--Recommendation View Controller-->
         <scene sceneID="OqC-ps-QKt">
             <objects>
-                <viewController id="I2U-bV-ZVJ" userLabel="Recommendation View Controller" sceneMemberID="viewController">
+                <viewController id="I2U-bV-ZVJ" userLabel="Recommendation View Controller" customClass="ViewController" customModule="iRecommend_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qGE-QU-IeK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,36 +57,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(recommendation here)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="999-KL-I7a" customClass="ViewController">
-                                <rect key="frame" x="116.5" y="305" width="181" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iF-e5-rTe">
                                 <rect key="frame" x="167" y="427" width="81" height="30"/>
                                 <state key="normal" title="Randomize!"/>
+                                <connections>
+                                    <action selector="SetRandomRecomendation:" destination="I2U-bV-ZVJ" eventType="touchUpInside" id="pch-Q6-Es8"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tck-NP-ysd">
-                                <rect key="frame" x="36" y="683" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tck-NP-ysd">
+                                <rect key="frame" x="36" y="745" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="C2S-CV-Vz6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(recommendation here)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="999-KL-I7a" customClass="ViewController">
+                                <rect key="frame" x="117" y="320" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LSJ-pI-bMa" firstAttribute="bottom" secondItem="tck-NP-ysd" secondAttribute="bottom" constant="95" id="26Z-uL-an4"/>
+                            <constraint firstItem="LSJ-pI-bMa" firstAttribute="trailing" secondItem="tck-NP-ysd" secondAttribute="trailing" constant="334" id="2HC-gf-av6"/>
                             <constraint firstItem="k2U-yV-AJS" firstAttribute="top" secondItem="LSJ-pI-bMa" secondAttribute="top" constant="240" id="5PT-34-ywO"/>
                             <constraint firstItem="999-KL-I7a" firstAttribute="centerX" secondItem="qGE-QU-IeK" secondAttribute="centerX" id="DPU-Lq-KaM"/>
                             <constraint firstItem="1iF-e5-rTe" firstAttribute="top" secondItem="999-KL-I7a" secondAttribute="bottom" constant="101" id="L4Q-Cn-tyo"/>
+                            <constraint firstItem="tck-NP-ysd" firstAttribute="leading" secondItem="LSJ-pI-bMa" secondAttribute="leading" constant="39" id="MTt-PB-Rg6"/>
                             <constraint firstItem="k2U-yV-AJS" firstAttribute="centerX" secondItem="qGE-QU-IeK" secondAttribute="centerX" id="VFi-H1-ecx"/>
+                            <constraint firstItem="tck-NP-ysd" firstAttribute="leading" secondItem="LSJ-pI-bMa" secondAttribute="leading" constant="39" id="eeV-Oy-xBp"/>
                             <constraint firstItem="999-KL-I7a" firstAttribute="top" secondItem="k2U-yV-AJS" secondAttribute="bottom" constant="44" id="vzd-5D-CVF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LSJ-pI-bMa"/>
                     </view>
                     <navigationItem key="navigationItem" id="vRL-kH-KnP"/>
+                    <connections>
+                        <outlet property="RecommendationLabel" destination="999-KL-I7a" id="Sym-Xm-Icy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-Rj-SMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
